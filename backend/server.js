@@ -16,29 +16,20 @@ const app = express();
 // ================= MIDDLEWARE =================
 app.use(express.json());
 
-// 🔥 CORS (simple version)
+// ================= CORS =================
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Methods",
-    "GET,POST,PUT,DELETE,OPTIONS"
-  );
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Content-Type, Authorization"
-  );
+  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-  if (req.method === "OPTIONS") {
-    return res.sendStatus(200);
-  }
-
+  if (req.method === "OPTIONS") return res.sendStatus(200);
   next();
 });
 
 // ================= ROUTES =================
 app.use("/api/auth", authRoutes);
 app.use("/api/students", studentRoutes);
-app.use("/api/teachers", teacherRoutes); // fixed
+app.use("/api/teachers", teacherRoutes);
 app.use("/api/marks", marksRoutes);
 app.use("/api/results", resultRoutes);
 app.use("/api/subjects", subjectRoutes);
@@ -48,29 +39,22 @@ app.get("/", (req, res) => {
   res.send("ERP Backend Running 🚀");
 });
 
-// ================= 404 =================
-app.use((req, res) => {
-  res.status(404).json({ message: "Route not found" });
-});
-
 // ================= ERROR HANDLER =================
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({
-    message: "Something went wrong!",
-    error: err.message,
-  });
+  console.error("ERROR:", err.message);
+  res.status(500).json({ message: err.message });
 });
+
+// ================= DEBUG =================
 console.log("SUPABASE_URL:", process.env.SUPABASE_URL);
+console.log(
+  "SUPABASE_KEY:",
+  process.env.SUPABASE_SERVICE_ROLE_KEY ? "FOUND" : "MISSING"
+);
 
-// // ================= SERVER =================
-// const PORT = process.env.PORT || 5000;
+// ================= SERVER =================
+const PORT = process.env.PORT || 5000;
 
-// console.log("🚀 Starting server...");
-
-// app.listen(PORT, () => {
-//   console.log(`✅ Server running on http://localhost:${PORT}`);
-// });
-
-// ================= EXPORT =================
-export default app;
+app.listen(PORT, () => {
+  console.log(`✅ Server running on PORT ${PORT}`);
+});

@@ -21,7 +21,8 @@ const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY; // ✅ use service ro
 if (!supabaseUrl || !supabaseKey) {
   throw new Error("❌ Supabase environment variables missing");
 }
-
+console.log("URL:", supabaseUrl);
+console.log("KEY:", supabaseKey ? "FOUND" : "MISSING");
 // Optional debug (safe: only URL)
 console.log("Loaded URL:", supabaseUrl);
 
