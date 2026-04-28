@@ -4,8 +4,7 @@ import {
   saveResults,
   getResultByStudent,
 } from "../models/Result.js";
-
-import supabase from "../../config/supabaseClient.js";
+import supabase from "../config/supabaseClient.js";
 
 // 🎯 Relative Grade Function (Percentile based)
 const getRelativeGrade = (rank, total) => {
