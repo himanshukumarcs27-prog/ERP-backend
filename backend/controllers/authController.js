@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import supabase from "../../config/supabaseClient.js";
+import supabase from "../config/supabaseClient.js";
 
 import { findUserByEmail, createUser } from "../../models/User.js";
 import { createStudent } from "../../models/Student.js";
