@@ -1,0 +1,166 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background: #1f2937;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: #f3f4f6;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+/* Header */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Search */
+#search {
+  margin-top: 15px;
+  padding: 10px;
+  width: 300px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  margin: 100px auto;
+  border-radius: 10px;
+}
+/* ===== PAGE HEADER ===== */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* ===== SEARCH ===== */
+#search {
+  padding: 12px;
+  width: 280px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* ===== TABLE ===== */
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th {
+  background: #111827;
+  color: white;
+  padding: 12px;
+}
+
+td {
+  padding: 12px;
+}
+
+tr:nth-child(even) {
+  background: #f3f4f6;
+}
+
+tr:hover {
+  background: #e0e7ff;
+}
+
+/* ===== BUTTON ===== */
+button {
+  padding: 8px 12px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+/* ===== MODAL ===== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  width: 320px;
+  margin: 120px auto;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.modal-content input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+/* reuse existing styles but add small enhancement */
+
+#search {
+  padding: 12px;
+  width: 280px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Smooth row hover */
+tr:hover {
+  background: #e0e7ff;
+  transition: 0.2s;
+}

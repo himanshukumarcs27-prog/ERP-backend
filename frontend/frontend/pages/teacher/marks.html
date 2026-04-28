@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Enter Marks</title>
+
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/table.css">
+</head>
+
+<body>
+
+<div class="main-wrapper">
+    <div id="sidebar-placeholder"></div>
+
+    <div class="main">
+        <div id="navbar-placeholder"></div>
+
+        <div class="content-container">
+            <div class="page-header">
+                <h2>Academic Performance</h2>
+                <p>Record and update student marks for the current semester</p>
+            </div>
+
+            <div class="card form-card">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Select Student</label>
+                        <select id="studentSelect">
+                            <option value="">-- Choose Student --</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Subject</label>
+                        <select id="subjectSelect">
+                            <option value="">-- Choose Subject --</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Obtained Marks</label>
+                        <input type="number" id="marks" placeholder="0-100" min="0" max="100">
+                    </div>
+                    <div class="input-group">
+                        <label>&nbsp;</label> <button class="btn-primary" onclick="submitMarks()">
+                            <i class='bx bx-save'></i> Save Grade
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card table-card">
+                <div class="card-header-flex">
+                    <h3>Recent Entries</h3>
+                    <div class="table-actions">
+                        <button class="btn-outline-small"><i class='bx bx-export'></i> Export CSV</button>
+                    </div>
+                </div>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Subject</th>
+                            <th>Marks</th>
+                            <th>Grade</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="marksTable">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../components/sidebar.js"></script>
+<script src="../../components/navbar.js"></script>
+<script src="../../js/teacher/marks.js"></script>
+
+</body>
+</html>

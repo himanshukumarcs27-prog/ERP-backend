@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Results</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+  <div id="sidebar"></div>
+
+  <div class="main">
+    <div id="navbar"></div>
+
+    <h2>Student Results</h2>
+
+    <!-- Select Student -->
+    <select id="studentSelect"></select>
+
+    <!-- Result Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Marks</th>
+        </tr>
+      </thead>
+      <tbody id="resultTable"></tbody>
+    </table>
+
+    <!-- Summary -->
+    <div class="summary">
+      <p>Total: <span id="total"></span></p>
+      <p>Percentage: <span id="percentage"></span></p>
+      <p>Grade: <span id="grade"></span></p>
+    </div>
+
+    <!-- Charts -->
+    <div class="charts">
+      <canvas id="barChart"></canvas>
+      <canvas id="pieChart"></canvas>
+    </div>
+
+  </div>
+</div>
+
+<script src="../../components/sidebar.js"></script>
+<script src="../../components/navbar.js"></script>
+<script src="../../js/admin/results.js"></script>
+
+</body>
+</html>

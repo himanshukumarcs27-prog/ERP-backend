@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Enter Marks</title>
+
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/table.css">
+
+  <!-- Icons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+<div class="main-wrapper">
+    
+    <!-- Sidebar -->
+    <div id="sidebar-placeholder"></div>
+
+    <!-- Main -->
+    <div class="main">
+
+        <!-- Navbar -->
+        <div id="navbar-placeholder"></div>
+
+        <div class="content-container">
+
+            <!-- HEADER -->
+            <div class="page-header">
+                <h2>Academic Performance Entry</h2>
+                <p>Record and update student marks for the current semester</p>
+            </div>
+
+            <!-- FORM CARD -->
+            <div class="card form-card enhanced-card">
+
+                <div class="form-grid">
+
+                    <!-- Student -->
+                    <div class="input-group">
+                        <label>Select Student</label>
+                        <div class="input-with-icon">
+                            <i class='bx bx-user'></i>
+                            <select id="studentSelect">
+                                <option value="">Choose Student</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Subject -->
+                    <div class="input-group">
+                        <label>Subject</label>
+                        <div class="input-with-icon">
+                            <i class='bx bx-book'></i>
+                            <select id="subjectSelect">
+                                <option value="">Choose Subject</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Marks -->
+                    <div class="input-group">
+                        <label>Obtained Marks</label>
+                        <div class="input-with-icon">
+                            <i class='bx bx-edit'></i>
+                            <input type="number" id="marks" placeholder="Enter marks (0-40)" min="0" max="40">
+                        </div>
+                        <small class="hint">Max marks: 40</small>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="input-group btn-group">
+                        <label>&nbsp;</label>
+                        <button class="btn-primary full-width" onclick="submitMarks()">
+                            <i class='bx bx-save'></i> Save Grade
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- TABLE CARD -->
+            <div class="card table-card enhanced-card">
+
+                <div class="card-header-flex">
+                    <div>
+                        <h3>Recent Entries</h3>
+                        <p class="sub-text">Latest submitted marks</p>
+                    </div>
+
+                    <div class="table-actions">
+                        <button class="btn-outline-small">
+                            <i class='bx bx-download'></i> Export CSV
+                        </button>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+
+                    <!-- TABLE -->
+                    <table class="admin-table modern-table">
+                        <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Subject</th>
+                                <th>Marks</th>
+                                <th>Grade</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="marksTable">
+                            <!-- Dynamic data -->
+                        </tbody>
+                    </table>
+
+                    <!-- GRAPH SECTION -->
+                    <div style="margin-top: 30px;">
+                        <h3>📊 Class Performance Graph</h3>
+
+                        <canvas id="marksChart" style="max-width: 700px;"></canvas>
+
+                        <div id="stats" style="margin-top: 10px;">
+                            <p>Average Marks: <span id="avgMarks"></span></p>
+                            <p>Average %: <span id="avgPercent"></span></p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Components -->
+<script src="../../components/sidebar.js"></script>
+<script src="../../components/navbar.js"></script>
+
+<!-- ✅ Chart.js MUST come before your script -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- ✅ ONLY ONE JS FILE (MODULE) -->
+<script type="module" src="../../js/teacher/marks.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP | Student Dashboard</title>
+
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <i class='bx bxs-graduation logo-icon'></i>
+            <span class="logo-text">ERP</span>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active"><i class='bx bxs-dashboard'></i> Dashboard</a>
+            <a href="../student/courses.html" class="nav-item">My Courses</a>
+            <a href="#" class="nav-item"><i class='bx bxs-bar-chart-alt-2'></i> Grades</a>
+            <a href="#" class="nav-item"><i class='bx bxs-calendar'></i> Schedule</a>
+            <a href="#" class="nav-item"><i class='bx bxs-user-check'></i> Attendance</a>
+            <a href="#" class="nav-item"><i class='bx bxs-wallet'></i> Finance</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="../auth/login.html"><i class='bx bx-log-out'></i> Logout</a>
+        </div>
+    </aside>
+
+    <!-- ========== MAIN ========== -->
+    <main class="main-wrapper">
+
+        <!-- HEADER -->
+        <header class="top-header">
+            <div class="search-container">
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="Search dashboard...">
+            </div>
+
+            <div class="header-actions">
+                <div class="user-info">
+                    <img id="profile-pic"
+                         src="https://ui-avatars.com/api/?name=User"
+                         alt="User">
+
+                    <span id="header-student-name">Loading...</span>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+
+                <div class="icon-group">
+                    <div class="notification-icon">
+                        <i class='bx bx-bell'></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <i class='bx bx-envelope'></i>
+                    <i class='bx bx-cog'></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- CONTENT -->
+        <div class="content-container">
+            <div class="dashboard-grid">
+
+                <!-- LEFT COLUMN -->
+                <div class="grid-col">
+
+                    <!-- WELCOME -->
+                    <section class="card welcome-section">
+                        <h1>Welcome back, <span id="welcome-name">Student</span>!</h1>
+                        <p class="current-date" id="current-date"></p>
+
+                        <div class="metric-list">
+
+                            <!-- GPA -->
+                            <div class="metric-item">
+                                <span class="label">Overall GPA</span>
+                                <div class="value-row">
+                                    <strong class="gpa-value" id="gpa">0.0</strong>
+                                    <small>/ 4.0</small>
+                                </div>
+                            </div>
+
+                            <!-- Credits -->
+                            <div class="metric-item">
+                                <span class="label">Credits</span>
+                                <div class="value-row">
+                                    <strong id="credits">0</strong>
+                                    <small>Current</small>
+                                    <span class="total">/ 120 Total</span>
+                                </div>
+                            </div>
+
+                            <!-- Course -->
+                            <div class="metric-item">
+                                <span class="label">Course</span>
+                                <div class="value-row">
+                                    <strong id="course">--</strong>
+                                </div>
+                            </div>
+
+                            <!-- Semester -->
+                            <div class="metric-item">
+                                <span class="label">Semester</span>
+                                <div class="value-row">
+                                    <strong id="semester">--</strong>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- ANNOUNCEMENTS -->
+                    <section class="card list-card">
+                        <h3>Announcements</h3>
+                        <div class="list-item">
+                            <i class='bx bx-megaphone icon-blue'></i>
+                            <div>
+                                <h4>Welcome to ERP System</h4>
+                                <p>Your dashboard is now connected 🔥</p>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- MIDDLE COLUMN -->
+                <div class="grid-col">
+                    <div class="section-header">
+                        <h3>My Courses</h3>
+                    </div>
+
+                    <div id="courses-container">
+                        <p>Loading courses...</p>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN -->
+                <div class="grid-col">
+
+                    <!-- SCHEDULE -->
+                    <section class="card side-card">
+                        <h3>Upcoming Schedule</h3>
+                        <p class="sub-label">Today's classes</p>
+                        <div id="schedule-container">
+                            <p>Loading schedule...</p>
+                        </div>
+                    </section>
+
+                    <!-- GRADES -->
+                    <section class="card side-card">
+                        <h3>Recent Grades</h3>
+                        <div id="grades-container">
+                            <p>Loading grades...</p>
+                        </div>
+                    </section>
+
+                    <!-- QUICK ACCESS -->
+                    <section class="card quick-access">
+                        <h3>Quick Access</h3>
+                        <div class="qa-item"><i class='bx bx-credit-card'></i> Fees Payment</div>
+                        <div class="qa-item"><i class='bx bx-library'></i> Library</div>
+                        <div class="qa-item"><i class='bx bx-table'></i> Timetable</div>
+                    </section>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- SCRIPT -->
+    <script type="module" src="../../js/student/dashboard.js"></script>
+
+</body>
+</html>

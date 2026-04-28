@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body class="center">
+
+<div class="login-card">
+  <h2>Create Account</h2>
+  <input type="text" id="name" placeholder="Full Name">
+  <input type="email" id="email" placeholder="Email (must end with @iilm.edu.com)">
+  <input type="password" id="password" placeholder="Password">
+  
+  <select id="role" onchange="toggleStudentFields()">
+    <option value="">Select Role</option>
+    <option value="admin">Admin</option>
+    <option value="teacher">Teacher</option>
+    <option value="student">Student</option>
+  </select>
+
+  <div id="student-only" style="display:none;">
+    <input type="text" id="roll_no" placeholder="Roll Number">
+    <input type="text" id="course" placeholder="Course (e.g. B.Tech)">
+    <input type="number" id="semester" placeholder="Semester">
+  </div>
+
+  <button onclick="register()">Register</button>
+</div>
+
+<script>
+function toggleStudentFields() {
+  const role = document.getElementById('role').value;
+  document.getElementById('student-only').style.display = (role === 'student') ? 'block' : 'none';
+}
+</script>
+
+<script src="../../js/auth.js"></script>
+
+</body>
+</html>

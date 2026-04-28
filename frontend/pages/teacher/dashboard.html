@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard |  ERP</title>
+    <link rel="stylesheet" href="../../css/dashboard.css"> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <i class='bx bxs-graduation logo-icon'></i>
+            <span class="logo-text">Learn ERP</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active"><i class='bx bxs-dashboard'></i> Dashboard</a>
+            <a href="classes.html" class="nav-item"><i class='bx bxs-book-content'></i> My Classes</a>
+            <a href="marks.html" class="nav-item"><i class='bx bxs-edit'></i> Grades & Assignments</a>
+            <a href="students.html" class="nav-item"><i class='bx bxs-group'></i> Student Roster</a>
+            <a href="#" class="nav-item"><i class='bx bxs-bar-chart-alt-2'></i> Analytics</a>
+            <a href="#" class="nav-item"><i class='bx bxs-file-find'></i> Reports</a>
+        </nav>
+    </aside>
+
+    <main class="main-wrapper">
+        <header class="top-header">
+            <div class="search-container">
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="Search classes or students...">
+            </div>
+            <div class="header-actions">
+                <div class="user-info">
+                    <img src="" id="teacher-profile-pic" alt="Dr.">
+                    <span id="teacher-name-header">Loading...</span>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+                <div class="icon-group">
+                    <i class='bx bx-bell'></i>
+                    <i class='bx bx-envelope'></i>
+                    <i class='bx bx-cog'></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-container">
+            <div class="dashboard-grid">
+                
+                <div class="grid-col">
+                    <section class="card welcome-section">
+                        <h1>Welcome back, <span id="welcome-teacher">Teacher</span>!</h1>
+                        <p class="current-date">Monday, Oct 28, 2024</p>
+                        
+                        <div class="metric-list">
+                            <div class="metric-item">
+                                <span class="label">Current Semester</span>
+                                <strong>Fall 2024</strong>
+                            </div>
+                            <div class="metric-item">
+                                <span class="label">Department</span>
+                                <strong id="dept-name">Computer Science</strong>
+                            </div>
+                            <div class="metric-item">
+                                <span class="label">Total Students</span>
+                                <strong id="total-students-count">128</strong>
+                            </div>
+                            <div class="metric-item warning-highlight">
+                                <span class="label">Unchecked Assignments</span>
+                                <strong id="pending-tasks">35</strong>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="grid-col">
+                    <h3>My Active Classes</h3>
+                    <div class="classes-container" id="classes-list">
+                        <div class="course-card">
+                            <div class="card-head"><span>1) CS302</span> <i class='bx bx-dots-vertical-rounded'></i></div>
+                            <h4>Advanced Web Development</h4>
+                            <p>Tue/Thu, Lecture Hall 4</p>
+                            <div class="progress-container"><div class="progress-bar" style="width: 75%;"></div></div>
+                            <div class="progress-text">Syllabus Progress <span>75%</span></div>
+                            <div class="card-actions">
+                                <button class="btn-outline">View Roster</button>
+                                <button class="btn-primary-small">Manage Grades</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-col">
+                    <section class="card side-card">
+                        <h3>Upcoming Schedule</h3>
+                        <div class="schedule-item"><span>CS101</span> <strong>10:00 AM</strong></div>
+                        <div class="schedule-item"><span>MAT210</span> <strong>11:30 AM</strong></div>
+                        <div class="schedule-item"><span>Faculty Meeting</span> <strong>01:30 PM</strong></div>
+                    </section>
+
+                    <section class="card side-card">
+                        <h3>Recent Submissions</h3>
+                        <div class="grade-item"><span>CS101: Assignment 3</span> <small>12 New</small></div>
+                        <div class="grade-item"><span>MAT210: Quiz 2</span> <small>45 New</small></div>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="../../js/teacher/dashboard.js"></script>
+</body>
+</html>

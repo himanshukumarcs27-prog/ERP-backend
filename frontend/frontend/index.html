@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ERP System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1 class="main-heading">Select Your Role</h1>
+
+  <div class="role-container">
+
+    <div class="role-card" onclick="selectRole('admin')">
+      <i class="fas fa-user-shield"></i>
+      <h3>Admin</h3>
+      <p>Manage system & users</p>
+    </div>
+
+    <div class="role-card" onclick="selectRole('teacher')">
+      <i class="fas fa-chalkboard-teacher"></i>
+      <h3>Teacher</h3>
+      <p>Manage classes & students</p>
+    </div>
+
+    <div class="role-card" onclick="selectRole('student')">
+      <i class="fas fa-user-graduate"></i>
+      <h3>Student</h3>
+      <p>View courses & results</p>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function selectRole(role) {
+  localStorage.setItem("selectedRole", role);
+  window.location.href = "pages/auth/login.html";
+}
+</script>
+
+</body>
+</html>
