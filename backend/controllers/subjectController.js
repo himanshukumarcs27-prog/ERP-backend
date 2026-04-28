@@ -5,7 +5,7 @@ import {
   getSubjectById,
   updateSubject,
   deleteSubject,
-} from "../../models/Subject.js";
+} from "../models/Subject.js";
 
 // ➕ Add Subject
 export const addSubject = async (req, res) => {

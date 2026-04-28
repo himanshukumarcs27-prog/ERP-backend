@@ -3,7 +3,7 @@ import {
   getStudentsByClass,
   saveResults,
   getResultByStudent,
-} from "../../models/Result.js";
+} from "../models/Result.js";
 
 import supabase from "../../config/supabaseClient.js";
 

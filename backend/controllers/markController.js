@@ -1,6 +1,6 @@
-import { addMarks } from "../../models/Marks.js";
+import { addMarks } from "../models/Marks.js";
 import { recalculateClassResult } from "./resultController.js";
-import supabase from "../../config/supabaseClient.js";
+import supabase from "../config/supabaseClient.js";
 
 // ================= ADD MARKS =================
 export const addMarksController = async (req, res) => {
