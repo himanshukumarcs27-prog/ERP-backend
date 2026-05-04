@@ -1,11 +1,5 @@
 // ========================== BASE CONFIG ==========================
-const isLocalhost =
-  window.location.hostname === "localhost" ||
-  window.location.hostname === "127.0.0.1";
-
-const BASE_URL = isLocalhost
-  ? "http://localhost:5000/api"
-  : "https://erp-ten-pied.vercel.app/api";
+const BASE_URL = "https://erp-backend-49ee.onrender.com/api";
 
 
 // ========================== HEADERS ==========================
@@ -17,8 +11,6 @@ const getHeaders = (auth = false) => {
   if (auth) {
     const token = localStorage.getItem("token");
 
-    console.log("TOKEN:", token); // DEBUG
-
     if (token) {
       headers["Authorization"] = `Bearer ${token}`;
     }
@@ -29,8 +21,12 @@ const getHeaders = (auth = false) => {
 
 
 // ========================== GENERIC API ==========================
-// 🔥 FIX: ADD export HERE
-export const apiRequest = async (endpoint, method = "GET", body = null, auth = false) => {
+export const apiRequest = async (
+  endpoint,
+  method = "GET",
+  body = null,
+  auth = false
+) => {
   try {
     const res = await fetch(`${BASE_URL}${endpoint}`, {
       method,
@@ -39,25 +35,40 @@ export const apiRequest = async (endpoint, method = "GET", body = null, auth = f
     });
 
     let data = {};
+
     try {
       data = await res.json();
-    } catch {}
+    } catch {
+      data = {};
+    }
 
+    // 🔐 Handle Unauthorized
     if (res.status === 401) {
       localStorage.removeItem("token");
       alert("Session expired. Please login again.");
+
+      // Redirect safely
       window.location.href = "/pages/auth/login.html";
       throw new Error("Unauthorized");
     }
 
+    // ❌ Handle other errors
     if (!res.ok) {
-      throw new Error(data.message || "API Error");
+      throw new Error(data.message || "Something went wrong");
     }
 
     return data;
 
   } catch (err) {
     console.error("API ERROR:", err.message);
+
+    // 🌐 Network issue handling
+    if (!navigator.onLine) {
+      alert("No internet connection");
+    } else {
+      alert(err.message);
+    }
+
     throw err;
   }
 };
@@ -109,7 +120,12 @@ export const deleteTeacher = (id) =>
 
 // ========================== MARKS ==========================
 export const getMarks = (subject_id = "") =>
-  apiRequest(`/marks${subject_id ? `?subject_id=${subject_id}` : ""}`, "GET", null, true);
+  apiRequest(
+    `/marks${subject_id ? `?subject_id=${subject_id}` : ""}`,
+    "GET",
+    null,
+    true
+  );
 
 export const addMarks = (data) =>
   apiRequest("/marks/add", "POST", data, true);
